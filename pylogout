@@ -6,7 +6,7 @@ import gtk
 import os
 import getpass
 
-import config
+from config import *
 
 class exit_dialog:
     def disable_buttons(self):

@@ -65,51 +65,56 @@ class cb_exit:
         self.window.set_icon(windowicon)
 
 
-        #Create HBox for buttons
-        self.button_box = gtk.HBox()
-        self.button_box.show()
-
+        #Create first HBox for buttons
+        self.button_box_top = gtk.HBox()
+        self.button_box_top.show()
 
         #Logout button
+        self.shutdown = gtk.Button(stock = gtk.STOCK_QUIT)
         self.logout = gtk.Button("_Log out")
         self.logout.set_border_width(4)
         self.logout.connect("clicked", self.logout_action)
-        self.button_box.pack_start(self.logout)
+        self.button_box_top.pack_start(self.logout)
         self.logout.show()
 
         #Suspend button
         self.suspend = gtk.Button("_Suspend")
         self.suspend.set_border_width(4)
         self.suspend.connect("clicked", self.suspend_action)
-        self.button_box.pack_start(self.suspend)
+        self.button_box_top.pack_start(self.suspend)
         self.suspend.show()
 
         # Hibernate button
         self.hibernate = gtk.Button("_Hibernate")
         self.hibernate.set_border_width(4)
         self.hibernate.connect("clicked", self.hibernate_action)
-        self.button_box.pack_start(self.hibernate)
+        self.button_box_top.pack_start(self.hibernate)
         self.hibernate.show()
 
+        #Create second HBox for buttons
+        self.button_box_bottom = gtk.HBox()
+        self.button_box_bottom.show()
+
         #Reboot button
+        self.reboot = gtk.Button(stock = gtk.STOCK_REFRESH)
         self.reboot = gtk.Button("_Reboot")
         self.reboot.set_border_width(4)
         self.reboot.connect("clicked", self.reboot_action)
-        self.button_box.pack_start(self.reboot)
+        self.button_box_bottom.pack_start(self.reboot)
         self.reboot.show()
 
         #Shutdown button
         self.shutdown = gtk.Button("_Power off")
         self.shutdown.set_border_width(4)
         self.shutdown.connect("clicked", self.shutdown_action)
-        self.button_box.pack_start(self.shutdown)
+        self.button_box_bottom.pack_start(self.shutdown)
         self.shutdown.show()
 
         #Cancel button
         self.cancel = gtk.Button(stock = gtk.STOCK_CANCEL)
         self.cancel.set_border_width(4)
         self.cancel.connect("clicked", self.cancel_action)
-        self.button_box.pack_start(self.cancel)
+        self.button_box_bottom.pack_start(self.cancel)
         self.cancel.show()
 
         #Create HBox for status label
@@ -121,7 +126,8 @@ class cb_exit:
 
         #Create VBox and pack the above HBox's
         self.vbox = gtk.VBox()
-        self.vbox.pack_start(self.button_box)
+        self.vbox.pack_start(self.button_box_top)
+        self.vbox.pack_start(self.button_box_bottom)
         self.vbox.pack_start(self.label_box)
         self.vbox.show()
 

@@ -12,18 +12,13 @@
 #    print win.get_wm_name()
 
 import xcffib
+import xcffib.xproto
 
 display = xcffib.connect()
-screen = display.get_setup()
-root = screen.roots[0].root
-
-#display = xcffib.connect()
-#screen = display.get_setup().roots[0]
-#root = screen.root
+screen = display.get_setup().roots[0]
+root = screen.root
 tree = root.query_tree()
 wins= tree.children
 
 for win in wins:
     print win.get_wm_name()
-
-#xcb_query_tree_reply_t;

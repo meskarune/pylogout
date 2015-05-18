@@ -1,10 +1,9 @@
 # The command used to lock the screen
-lock_command = "lock"
+lock_command = "i3lock"
 
 # The command used to close all open windows gracefully
 # default reqires that wmctrl be installed
-close_command = "wmctrl -l -p | awk '{print $3}' | while read PID; do kill -15
-$PID; done"
+close_command = "wmctrl -l -p | awk '{print $3}' | while read PID; do kill -15 $PID; done"
 
 # The command used to logout from the current session
 # i3

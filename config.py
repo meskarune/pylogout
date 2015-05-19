@@ -18,8 +18,8 @@ logout_command = "herbstclient quit"
 #hibernate_command = "systemctl hibernate"
 
 # Pm-utils
-suspend_command = "pm-suspend"
-hibernate_command = "pm-hibernate"
+suspend_command = "sudo pm-suspend"
+hibernate_command = "sudo pm-hibernate"
 
 # The command run to reboot the computer
 reboot_command = "systemctl reboot"

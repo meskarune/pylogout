@@ -1,21 +1,27 @@
 # pylogout
 
-Python gtk system exit applet based off cb\_exit
+Python cli and gtk system exit applet based off cb\_exit
 
-Pylogout opens a small application that gives the user the following options:
+Running pylogout gives the user the following options:
 
-* lock screen
-* log out
-* suspend
-* hibernate
-* reboot
-* power off
+    Usage: pylogout [OPTIONS]
+    
+    Leave the current Session
+    
+     Options:
+       --version         show program's version number and exit
+       -h, --help        show this help message and exit
+       -S, --screenlock  Lock the screen
+       -l, --logout      Close open programs and logout
+       -s, --suspend     Lock the screen and suspend
+       -b, --hibernate   Lock the screen and hibernate
+       -r, --reboot      Close open programs and reboot
+       -p, --poweroff    Close open programs and poweroff
 
-Custom commands can be set in the config.py file
+Commands can be set in the config.py file
 
 To-do:
 
-* Make it actually work
 * icons
 * make it prettier
 * system tray?
